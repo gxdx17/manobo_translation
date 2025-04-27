@@ -1,0 +1,31 @@
+model_dir: data/model  # Directory to save the model and checkpoints
+
+data:
+  train_features_file: data/train.src  # Path to the source training data
+  train_labels_file: data/train.tgt    # Path to the target training data
+  eval_features_file: data/val.src     # Path to the source validation data
+  eval_labels_file: data/val.tgt       # Path to the target validation data
+  source_vocabulary: vocab/src-vocab.txt  # Path to the source vocabulary file
+  target_vocabulary: vocab/tgt-vocab.txt  # Path to the target vocabulary file
+
+train:
+  batch_size: 32                        # Batch size for training
+  save_checkpoints_steps: 500           # How often to save checkpoints (in steps)
+  maximum_steps: 10000                  # Maximum number of training steps
+  keep_checkpoint_max: 3                # Number of checkpoints to keep
+
+params:
+  optimizer: Adam                       # Optimizer to use during training
+  learning_rate: 2.0                    # Learning rate
+  learning_rate_decay_type: no_decay    # Type of learning rate decay (no decay in this case)
+
+  encoder_type: transformer             # Type of encoder model (transformer)
+  decoder_type: transformer             # Type of decoder model (transformer)
+  num_layers: 4                         # Number of layers in the transformer
+  num_units: 512                        # Number of units (hidden dimension)
+  num_heads: 8                          # Number of attention heads
+  ffn_inner_dim: 2048                   # Inner dimension of the feed-forward network
+  dropout: 0.1                          # Dropout rate for regularization
+
+infer:
+  batch_size: 32                        # Batch size for inference
