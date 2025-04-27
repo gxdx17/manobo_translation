@@ -1,0 +1,8 @@
+embeddings {
+  tensor_name: "model/examples_inputter/features_inputter/embedding/.ATTRIBUTES/VARIABLE_VALUE"
+  metadata_path: "model_examples_inputter_features_inputter_embedding.txt"
+}
+embeddings {
+  tensor_name: "model/examples_inputter/labels_inputter/embedding/.ATTRIBUTES/VARIABLE_VALUE"
+  metadata_path: "model_examples_inputter_labels_inputter_embedding.txt"
+}
